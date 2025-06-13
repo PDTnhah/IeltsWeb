@@ -16,15 +16,27 @@ namespace Backend.Models
 
         [StringLength(300)]
         [Column("thumbnail")]
-        public string thumbnail { get; set; }
+        public string? thumbnail { get; set; }
 
         [Column("description")]
-        public string description { get; set; }
+        public string? description { get; set; }
+
+        [Column("main_content", TypeName = "LONGTEXT")]
+        public string? main_content { get; set; }
+
+        [StringLength(500)]
+        [Column("audio_url")]
+        public string? audio_url { get; set; }
+
+        [Column("transcript", TypeName = "TEXT")]
+        public string? transcript { get; set; }
 
         [ForeignKey("Skill")]
         [Column("skill_id")]
         public long skillId { get; set; }
 
         public Skill skill { get; set; }
+
+        public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
     }
 }

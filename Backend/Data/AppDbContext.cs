@@ -13,6 +13,11 @@ namespace Backend.Data
         public DbSet<SocialAccount> SocialAccounts { get; set; }
         public DbSet<Token> Tokens { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Essay> Essays { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Choice> Choices { get; set; }
+        public DbSet<LessionAttempt> LessionAttempts { get; set; }
+        public DbSet<AnswerAttempt> AnswerAttempts { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -26,6 +31,41 @@ namespace Backend.Data
                 .HasOne(l => l.skill)
                 .WithMany()
                 .HasForeignKey(l => l.skillId);
+
+            modelBuilder.Entity<Lession>()
+                .HasMany(l => l.Questions)
+                .WithOne(q => q.Lession)
+                .HasForeignKey(q => q.lession_id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Question>()
+                .HasMany(q => q.Choices)
+                .WithOne(c => c.Question)
+                .HasForeignKey(c => c.question_id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Lession>()
+                .HasOne(l => l.skill)
+                .WithMany(s => s.Lessions)
+                .HasForeignKey(l => l.skillId);
+
+             modelBuilder.Entity<LessionAttempt>()
+                .HasMany(la => la.AnswerAttempts)
+                .WithOne(aa => aa.LessionAttempt)
+                .HasForeignKey(aa => aa.lession_attempt_id)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<AnswerAttempt>()
+                .HasOne(aa => aa.Question)
+                .WithMany()
+                .HasForeignKey(aa => aa.question_id)
+                .OnDelete(DeleteBehavior.Restrict); // Hoặc Cascade
+
+            modelBuilder.Entity<AnswerAttempt>()
+                .HasOne(aa => aa.SelectedChoice)
+                .WithMany()
+                .HasForeignKey(aa => aa.selected_choice_id)
+                .OnDelete(DeleteBehavior.SetNull);
 
             modelBuilder.Entity<LessionImage>()
                 .HasOne(li => li.lession)
@@ -51,6 +91,25 @@ namespace Backend.Data
                 .HasOne(t => t.user)
                 .WithMany()
                 .HasForeignKey(t => t.userId);
+
+            modelBuilder.Entity<LessionAttempt>()
+                .HasMany(la => la.AnswerAttempts)
+                .WithOne(aa => aa.LessionAttempt)
+                .HasForeignKey(aa => aa.lession_attempt_id)
+                .OnDelete(DeleteBehavior.Cascade); // Xóa câu trả lời nếu lần làm bài bị xóa
+
+            modelBuilder.Entity<AnswerAttempt>()
+                .HasOne(aa => aa.Question)
+                .WithMany() // Một Question có thể có nhiều AnswerAttempt từ các LessionAttempt khác nhau
+                .HasForeignKey(aa => aa.question_id)
+                .OnDelete(DeleteBehavior.Restrict); // Hoặc Cascade nếu muốn xóa answer khi question bị xóa (cân nhắc)
+
+            modelBuilder.Entity<AnswerAttempt>()
+                .HasOne(aa => aa.SelectedChoice)
+                .WithMany() // Một Choice có thể được chọn trong nhiều AnswerAttempt
+                .HasForeignKey(aa => aa.selected_choice_id)
+                .OnDelete(DeleteBehavior.SetNull); // Nếu Choice bị xóa, vẫn giữ lại AnswerAttempt nhưng selected_choice_id là null
+
         }
     }
 }

@@ -12,5 +12,8 @@ namespace Backend.Models
         [Required]
         [Column("name")]
         public string name { get; set; }
+
+        public virtual ICollection<Lession> Lessions { get; set; } = new List<Lession>();
+
     }
 }

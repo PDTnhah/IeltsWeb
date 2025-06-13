@@ -5,10 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Service;
 using Backend.Repositories;
+using Backend.Mappers;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +31,7 @@ builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = null; // Keep property names as is
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     });
 
 // Configure MySQL with EF Core
@@ -36,12 +40,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
+    
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 // Register services
 builder.Services.AddScoped<ILessionService, LessionService>();
 builder.Services.AddScoped<ISkillService, SkillService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<ILessionResultService, LessionResultService>();
+builder.Services.AddScoped<NewDeepSeekService>();
 
 // Register repositories
 builder.Services.AddScoped<ILessionRepository, LessionRepository>();
@@ -50,6 +58,27 @@ builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<ISkillResultRepository, SkillResultRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+builder.Services.AddScoped<IChoiceRepository, ChoiceRepository>();
+builder.Services.AddScoped<ILessionAttemptRepository, LessionAttemptRepository>();
+builder.Services.AddScoped<IAnswerAttemptRepository, AnswerAttemptRepository>();
+
+var deepSeekApiKey = builder.Configuration["DeepSeekApiKey"]; 
+var openRouterBaseUrl = builder.Configuration.GetValue<string>("OpenRouter:BaseUrl") ?? "https://openrouter.ai/api/v1";
+
+if (string.IsNullOrEmpty(deepSeekApiKey))
+{
+    Console.WriteLine("CRITICAL WARNING: DeepSeekApiKey (OpenRouter API Key) is missing. AI Feedback service will likely fail.");
+}
+builder.Services.AddHttpClient<IDeepseekService, DeepseekService>(client =>
+{
+    client.BaseAddress = new Uri(openRouterBaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(300);
+    if (!string.IsNullOrEmpty(deepSeekApiKey))
+    {
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", deepSeekApiKey);
+    }
+});
 
 // Configure JWT Authentication
 var jwtKey = builder.Configuration["Jwt:Key"];
@@ -93,10 +122,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection(); // Kiểm tra lại điểm 2 (HTTP vs HTTPS)
+app.UseHttpsRedirection(); 
 
-// *** SỬA ĐỔI: Thêm UseCors vào đây ***
-// Phải được gọi trước UseAuthentication và UseAuthorization
 app.UseCors("AllowFrontend");
 
 

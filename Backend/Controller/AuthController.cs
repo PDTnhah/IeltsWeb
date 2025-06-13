@@ -3,7 +3,7 @@ using Backend.Dtos;
 using Backend.Service;
 using System.Threading.Tasks;
 
-namespace Backend.Controllers
+namespace Backend.Controller
 {
     [Route("api/v1/auth")]
     [ApiController]

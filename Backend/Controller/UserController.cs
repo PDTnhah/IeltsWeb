@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Collections.Generic;
 using System;
+using System.Threading.Tasks;
 using Backend.Dtos;
-using Backend.Service;
 using Backend.Models;
-using Backend.Exceptions;
+using Backend.Service;
 
 namespace Backend.Controller
 {
@@ -20,59 +18,109 @@ namespace Backend.Controller
             _userService = userService;
         }
 
-        [HttpPost("register")]
-        public IActionResult CreateUser([FromBody] UserDtos userDtos)
+        /// <summary>
+        /// Lấy thông tin user theo ID
+        /// GET api/v1/users/{id}
+        /// </summary>
+        [HttpGet("{id:long}")]
+        public async Task<IActionResult> GetUser(long id)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(errors);
-            }
+            var user = await _userService.GetUserByIdAsync(id);
+            if (user == null)
+                return NotFound(new { message = $"User with id {id} not found." });
 
-            if (userDtos.password != userDtos.reTypePassword)
+            var response = new UserResponseDto
             {
-                return BadRequest("Passwords do not match");
-            }
-
-            try
-            {
-                var newUser = _userService.CreateUser(userDtos);
-                return Ok("Register successfully");
-            }
-            catch (DataNotFoundException ex)
-            {
-                return BadRequest(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+                Id = user.id,
+                FullName = user.fullname,
+                Email = user.email,
+                PhoneNumber = user.phoneNumber,
+                Address = user.address,
+                DateOfBirth = user.dateOfBirth,
+                FacebookAccountId = user.facebookAccountId,
+                GoogleAccountId = user.googleAccountId,
+                RoleId = user.roleId,
+                IsActive = user.active,
+                CreatedAt = user.createdAt,
+                UpdatedAt = user.updatedAt
+            };
+            return Ok(response);
         }
 
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] UserLoginDto userLoginDto)
+        /// <summary>
+        /// Cập nhật thông tin user
+        /// PUT api/v1/users/{id}
+        /// </summary>
+        [HttpPut("{id:long}")]
+        public async Task<IActionResult> UpdateUser(long id, [FromBody] UserDtos dto)
         {
-            if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values
-                    .SelectMany(v => v.Errors)
-                    .Select(e => e.ErrorMessage)
-                    .ToList();
-                return BadRequest(errors);
-            }
+            // Có thể thêm xác thực userId từ token so với id
 
-            try
+            // Gọi service để update
+            var updated = await _userService.UpdateUserByAdminAsync(id, dto);
+            if (updated == null)
+                return NotFound(new { message = $"User with id {id} not found." });
+
+            var response = new UserResponseDto
             {
-                var token = _userService.Login(userLoginDto.phoneNumber, userLoginDto.password);
-                return Ok(token);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+                Id = updated.id,
+                FullName = updated.fullname,
+                Email = updated.email,
+                PhoneNumber = updated.phoneNumber,
+                Address = updated.address,
+                DateOfBirth = updated.dateOfBirth,
+                FacebookAccountId = updated.facebookAccountId,
+                GoogleAccountId = updated.googleAccountId,
+                RoleId = updated.roleId,
+                IsActive = updated.active,
+                CreatedAt = updated.createdAt,
+                UpdatedAt = updated.updatedAt
+            };
+            return Ok(response);
         }
+
+        [HttpGet("email/{email}")]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            var user = await _userService.GetUserByEmailForAuthAsync(email);
+            if (user == null)
+                return NotFound(new { message = $"User with email '{email}' not found." });
+
+            var response = new UserResponseDto
+            {
+                Id = user.id,
+                FullName = user.fullname,
+                Email = user.email,
+                PhoneNumber = user.phoneNumber,
+                Address = user.address,
+                DateOfBirth = user.dateOfBirth,
+                FacebookAccountId = user.facebookAccountId,
+                GoogleAccountId = user.googleAccountId,
+                RoleId = user.roleId,
+                IsActive = user.active,
+                CreatedAt = user.createdAt,
+                UpdatedAt = user.updatedAt
+            };
+
+            return Ok(response);
+        }
+
+// [HttpPut("email/{email}")]
+// public async Task<IActionResult> UpdateUser(string email, [FromBody] UserUpdateDto updatedUser)
+// {
+//     var user = await _userService.GetUserByEmailForAuthAsync(email);
+//     if (user == null) return NotFound("User not found");
+
+//     user.fullname = updatedUser.fullName;
+//     user.phoneNumber = updatedUser.phoneNumber;
+//     user.address = updatedUser.address;
+//     user.dateOfBirth = updatedUser.dateOfBirth;
+
+//     await user.SaveAsync(user);
+
+//     return Ok("User updated successfully");
+// }
     }
+
+    
 }

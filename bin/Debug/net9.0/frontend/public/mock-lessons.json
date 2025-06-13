@@ -1,0 +1,177 @@
+{
+  "skills": [
+    { "id": 1, "name": "Listening", "slug": "listening" },
+    { "id": 2, "name": "Reading", "slug": "reading" },
+    { "id": 3, "name": "Writing", "slug": "writing" },
+    { "id": 4, "name": "Speaking", "slug": "speaking" }
+  ],
+  "lessons": [
+    {
+      "id": 101,
+      "name": "Bài Nghe: Đặt Phòng Khách Sạn",
+      "thumbnail": null,
+      "description": "Nghe một cuộc hội thoại đặt phòng khách sạn và trả lời các câu hỏi trắc nghiệm.",
+      "main_content": null,
+      "audio_url": "/audio/PART 1.mp3",
+      "transcript": "<p><strong>Receptionist:</strong> Good morning, Grand Hotel, Sarah speaking. How can I help you?</p><p><strong>Customer:</strong> Hello, I'd like to book a room for next weekend, please.</p><p><strong>Receptionist:</strong> Certainly. For which dates, sir/madam?</p><p><strong>Customer:</strong> From Friday the 14th to Sunday the 16th of June.</p><p><strong>Receptionist:</strong> Alright. And for how many people?</p><p><strong>Customer:</strong> Just for myself.</p><p><strong>Receptionist:</strong> Okay, a single room. We have standard single rooms and deluxe single rooms available. The deluxe rooms have a sea view.</p><p><strong>Customer:</strong> What's the price difference?</p><p><strong>Receptionist:</strong> The standard room is $80 per night, and the deluxe is $110 per night, including breakfast.</p><p><strong>Customer:</strong> I'll take the deluxe room, please.</p><p><strong>Receptionist:</strong> Excellent choice. Could I have your name, please?</p><p><strong>Customer:</strong> It's David Miller. M-I-L-L-E-R.</p><p><strong>Receptionist:</strong> Thank you, Mr. Miller. And a contact number?</p><p><strong>Customer:</strong> My mobile is 07700 900123.</p><p><strong>Receptionist:</strong> 07700 900123. Perfect. Your booking for a deluxe single room from June 14th to June 16th is confirmed. We look forward to welcoming you.</p><p><strong>Customer:</strong> Thank you very much. Goodbye.</p>",
+      "skillId": 1,
+      "questions": [
+        {
+          "id": 1011,
+          "question_text": "What type of room does the customer book?",
+          "question_type": 0, "explanation": "The customer explicitly states 'I'll take the deluxe room, please.'",
+          "order_index": 0,
+          "choices": [
+            { "id": 10111, "choice_text": "Standard single room", "is_correct": false, "order_index": 0 },
+            { "id": 10112, "choice_text": "Deluxe single room", "is_correct": true, "order_index": 1 },
+            { "id": 10113, "choice_text": "Standard double room", "is_correct": false, "order_index": 2 },
+            { "id": 10114, "choice_text": "Deluxe double room", "is_correct": false, "order_index": 3 }
+          ]
+        },
+        {
+          "id": 1012,
+          "question_text": "What is the customer's contact phone number?",
+          "question_type": 0, "explanation": "The customer provides the number 07700 900123.",
+          "order_index": 1,
+          "choices": [
+            { "id": 10121, "choice_text": "07700 900321", "is_correct": false, "order_index": 0 },
+            { "id": 10122, "choice_text": "07700 900123", "is_correct": true, "order_index": 1 },
+            { "id": 10123, "choice_text": "00700 900123", "is_correct": false, "order_index": 2 },
+            { "id": 10124, "choice_text": "07709 900123", "is_correct": false, "order_index": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Đoạn Văn Reading: Biến Đổi Khí Hậu",
+      "thumbnail": null,
+      "description": "Đọc đoạn văn về nguyên nhân và hậu quả của biến đổi khí hậu, sau đó trả lời các câu hỏi.",
+      "main_content": "<h3>The Causes and Consequences of Climate Change</h3><p>Climate change, a long-term shift in temperatures and weather patterns, is one of the most pressing issues of our time. While Earth's climate has changed throughout history, the current changes are occurring at an unprecedented rate, primarily due to human activities since the mid-20th century.</p><p>The main driver of current climate change is the emission of greenhouse gases, such as carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O). These gases trap heat in the atmosphere, leading to a gradual warming of the planet, an effect known as the greenhouse effect. The burning of fossil fuels (coal, oil, and natural gas) for energy generation, transportation, and industry is the largest source of these emissions. Deforestation also contributes significantly, as forests absorb CO2, and their removal releases stored carbon back into the atmosphere.</p><p>The consequences of climate change are far-reaching and diverse. Rising global temperatures lead to more frequent and intense heatwaves, melting glaciers and ice sheets, and subsequent sea-level rise. Changes in precipitation patterns can result in more severe droughts in some regions and increased flooding in others. These environmental shifts have profound impacts on ecosystems, agriculture, human health, and economies worldwide.</p>",
+      "audio_url": null,
+      "transcript": null,
+      "skillId": 2,
+      "questions": [
+        {
+          "id": 2011,
+          "question_text": "What is the primary driver of current climate change mentioned in the passage?",
+          "question_type": 0, "explanation": "The passage states, 'The main driver of current climate change is the emission of greenhouse gases... primarily due to human activities...'",
+          "order_index": 0,
+          "choices": [
+            { "id": 20111, "choice_text": "Natural climate cycles", "is_correct": false, "order_index": 0 },
+            { "id": 20112, "choice_text": "Volcanic eruptions", "is_correct": false, "order_index": 1 },
+            { "id": 20113, "choice_text": "Emission of greenhouse gases from human activities", "is_correct": true, "order_index": 2 },
+            { "id": 20114, "choice_text": "Changes in solar radiation", "is_correct": false, "order_index": 3 }
+          ]
+        },
+        {
+          "id": 2012,
+          "question_text": "Which of the following is NOT listed as a consequence of climate change?",
+          "question_type": 0, "explanation": "The passage mentions heatwaves, melting glaciers, sea-level rise, droughts, and flooding, but not increased volcanic activity.",
+          "order_index": 1,
+          "choices": [
+            { "id": 20121, "choice_text": "More frequent heatwaves", "is_correct": false, "order_index": 0 },
+            { "id": 20122, "choice_text": "Melting glaciers", "is_correct": false, "order_index": 1 },
+            { "id": 20123, "choice_text": "Increased volcanic activity", "is_correct": true, "order_index": 2 },
+            { "id": 20124, "choice_text": "Sea-level rise", "is_correct": false, "order_index": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Đoạn Văn Reading: My Family Weekend Routine",
+      "thumbnail": null,
+      "description": "Đọc đoạn văn, sau đó trả lời các câu hỏi.",
+      "main_content": "<h3>My Family Weekend Routine</h3><p>On weekends, my family and I enjoy spending time together. Saturday mornings usually start with a big breakfast at home. My mom makes pancakes or waffles, and we all sit around the table chatting about our plans for the day. Sometimes we decide to go hiking in the nearby forest. It’s peaceful and beautiful there, with tall trees and birds chirping.</p><p>In the afternoons, if the weather is nice, we might have a picnic in the park. We bring sandwiches, fruit, and lemonade. We play games like Frisbee or soccer. It’s a great way to relax and enjoy each other’s company.</p><p>On Sundays, we often visit my grandparents. They live in a cozy house by the lake. My grandma is an amazing cook, and she always prepares a delicious lunch for us. We help her set the table and then enjoy a hearty meal together. After lunch, we take a walk around the lake or sit on the porch chatting and watching the sunset.</p><p>Evenings are for winding down. We might watch a movie together or play board games. It’s these simple moments that make our weekends special. I cherish the time I get to spend with my family—it’s when we create lasting memories and strengthen our bond.</p>",
+      "audio_url": null,
+      "transcript": null,
+      "skillId": 2,
+      "questions": [
+        {
+          "id": 2021,
+          "question_text": "What is the main idea of this passage",
+          "question_type": 0,
+          "explanation": null,
+          "order_index": 0,
+          "choices": [
+            { "id": 20211, "choice_text": "The importance of having a big breakfast on weekends", "is_correct": false, "order_index": 0 },
+            { "id": 20212, "choice_text": "The family's love for hiking and outdoor activities", "is_correct": false, "order_index": 1 },
+            { "id": 20213, "choice_text": "How the family spends quality time together on weekends", "is_correct": true, "order_index": 2 },
+            { "id": 20214, "choice_text": "The grandmother's cooking skills", "is_correct": false, "order_index": 3 }
+          ]
+        },
+        {
+          "id": 2022,
+          "question_text": "Which of the following is NOT mentioned in the passage?",
+          "question_type": 0,
+          "explanation": null,
+          "order_index": 1,
+          "choices": [
+            { "id": 20221, "choice_text": "Having a picnic in the park", "is_correct": false, "order_index": 0 },
+            { "id": 20222, "choice_text": "Watching movies together", "is_correct": false, "order_index": 1 },
+            { "id": 20223, "choice_text": "Playing board games", "is_correct": false, "order_index": 2 },
+            { "id": 20224, "choice_text": "Going to the beach", "is_correct": true, "order_index": 3 }
+          ]
+        },
+        {
+          "id": 2023,
+          "question_text": "On Saturday mornings, the family usually starts with _____.",
+          "question_type": 0,
+          "explanation": null,
+          "order_index": 1,
+          "choices": [
+            { "id": 20231, "choice_text": "a small snack", "is_correct": false, "order_index": 0 },
+            { "id": 20232, "choice_text": "a big breakfast", "is_correct": false, "order_index": 1 },
+            { "id": 20233, "choice_text": "exercise", "is_correct": false, "order_index": 2 },
+            { "id": 20234, "choice_text": "reading the newspaper", "is_correct": true, "order_index": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "name": "Writing Task 1: Biểu Đồ Đường",
+      "thumbnail": null,
+      "description": "<p>The line graph below shows the changes in the consumption of fish and different kinds of meat in a European country between 1979 and 2004.</p><p>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</p><p><em>(Imagine a line graph image would be here if this were a real app)</em></p>",
+      "main_content": null,
+      "audio_url": null,
+      "transcript": null,
+      "skillId": 3,
+      "questions": []
+    },
+    {
+      "id": 302,
+      "name": "Writing Task 2: Ảnh Hưởng Của Công Nghệ",
+      "thumbnail": null,
+      "description": "<p>Technology is becoming increasingly prevalent in modern society, impacting various aspects of daily life.</p><p>To what extent do you agree or disagree that the benefits of technology outweigh its drawbacks?</p><p>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</p><p>Write at least 250 words.</p>",
+      "main_content": null,
+      "audio_url": null,
+      "transcript": null,
+      "skillId": 3,
+      "questions": []
+    },
+    {
+      "id": 401,
+      "name": "Speaking Part 1: Chủ đề 'Hometown'",
+      "thumbnail": null,
+      "description": "Let's talk about your hometown or village.</p><ul><li>Where is your hometown?</li><li>What do you like most about it?</li><li>What is it known for?</li><li>Do you think you will continue to live in your hometown?</li></ul><p>Please prepare to speak about this topic for 1-2 minutes.</p>",
+      "main_content": null,
+      "audio_url": null,
+      "transcript": null,
+      "skillId": 4,
+      "questions": []
+    },
+    {
+      "id": 402,
+      "name": "Speaking Part 2: Describe a useful website",
+      "thumbnail": null,
+      "description": "<p>Describe a useful website you have used.</p><p>You should say:</p><ul><li>what the website is</li><li>how you found out about it</li><li>what information or services it offers</li></ul><p>and explain why you find this website useful.</p><p>You will have to talk about the topic for 1 to 2 minutes. You have one minute to think about what you are going to say. You can make some notes to help you if you wish.</p>",
+      "main_content": null,
+      "audio_url": null,
+      "transcript": null,
+      "skillId": 4,
+      "questions": []
+    }
+  ]
+}

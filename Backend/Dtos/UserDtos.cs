@@ -33,4 +33,18 @@ namespace Backend.Dtos
         [JsonPropertyName("role_id")]
         public long roleId { get; set; }
     }
+
+
+    public class UserUpdateDto
+    {
+        public string fullName { get; set; }
+
+        public string? phoneNumber { get; set; }
+
+        public string address { get; set; }
+
+        [JsonPropertyName("date_of_birth")]
+        public DateTime? dateOfBirth { get; set; }
+    }
+
 }

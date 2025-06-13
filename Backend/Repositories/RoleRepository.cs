@@ -1,6 +1,10 @@
 using Backend.Models;
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic; // Cho List
+using System.Linq;                // Cho FirstOrDefaultAsync, ToListAsync
+using System.Threading.Tasks;    // Cho Task
+using System;                   // Cho DateTime
 
 namespace Backend.Repositories
 {
@@ -13,23 +17,54 @@ namespace Backend.Repositories
             _context = context;
         }
 
-        public Role FindById(long id)
+        public async Task<Role?> FindByIdAsync(long id)
         {
-            return _context.Roles.FirstOrDefault(r => r.id == id);
+            return await _context.Roles.FirstOrDefaultAsync(r => r.id == id);
         }
 
-        public Role Save(Role role)
+        public async Task<Role?> FindByNameAsync(string name)
         {
-            if (role.id == 0)
+            if (string.IsNullOrEmpty(name)) return null;
+            return await _context.Roles.FirstOrDefaultAsync(r => r.name.ToLower() == name.ToLower());
+        }
+
+        public async Task<List<Role>> FindAllAsync()
+        {
+            return await _context.Roles.OrderBy(r => r.name).ToListAsync();
+        }
+
+        public async Task<Role> SaveAsync(Role role)
+        {
+            // Giả sử Role model không có createdAt/updatedAt hoặc không kế thừa BaseEntity
+            // Nếu có, bạn cần xử lý chúng tương tự như SkillRepository hoặc UserRepository
+            if (role.id == 0) // Tạo mới
             {
-                _context.Roles.Add(role);
+                // Nếu Role có createdAt/updatedAt, gán ở đây:
+                // if (role is BaseEntity be) { be.createdAt = DateTime.UtcNow; be.updatedAt = DateTime.UtcNow; }
+                await _context.Roles.AddAsync(role);
             }
-            else
+            else // Cập nhật
             {
-                _context.Roles.Update(role);
+                var existingRole = await _context.Roles.FindAsync(role.id);
+                if (existingRole != null)
+                {
+                    existingRole.name = role.name;
+                    // if (existingRole is BaseEntity be) { be.updatedAt = DateTime.UtcNow; }
+                    _context.Roles.Update(existingRole);
+                }
+                else
+                {
+                    // Xử lý trường hợp role không tồn tại để cập nhật
+                    throw new KeyNotFoundException($"Role with id {role.id} not found for update.");
+                }
             }
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return role;
+        }
+
+        public async Task<bool> ExistsAsync(long id)
+        {
+            return await _context.Roles.AnyAsync(r => r.id == id);
         }
     }
 }

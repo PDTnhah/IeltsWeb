@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5aacde6c-1213-42a0-b78d-aff3b3e8b2f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Backend/Controller/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Controller/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Controller/LessionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Controller/LessionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Controller/SkillController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Controller/SkillController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Controller/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Controller/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Data/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Data/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Dtos/LessionDtos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Dtos/LessionDtos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Dtos/UserDtos.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Dtos/UserDtos.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Models/Lession.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Models/Lession.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Models/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Models/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/ILessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/ILessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/IRoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/IRoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/ISkillRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/ISkillRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/IUserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/IUserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/LessionRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/LessionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/RoleRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/RoleRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/SkillRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/SkillRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Repositories/UserRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Repositories/UserRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Responses/LessionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Responses/LessionResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Service/ILessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Service/ILessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Service/ISkillService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Service/ISkillService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Service/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Service/IUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Service/LessionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Service/LessionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Service/SkillService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Service/SkillService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/Service/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/Service/UserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IeltsWeb.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../IeltsWeb.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Debug/net9.0/IeltsWeb.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Debug/net9.0/IeltsWeb.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Debug/net9.0/IeltsWeb.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Debug/net9.0/IeltsWeb.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Debug/net9.0/IeltsWeb.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Debug/net9.0/IeltsWeb.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Debug/net9.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Debug/net9.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/Debug/net9.0/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/Debug/net9.0/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.development" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/ietls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/user.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TheFooter.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TheHeader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminSidebar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/LessonForm.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/DashboardPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ExamListPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ExamView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomePage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/LessonView.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/AdminDashboard.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/AdminLayout.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/AdminLoginPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/ExamManagementPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/LessonManagementPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/admin/UserManagementPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/skill/ListenningPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/skill/ReadingPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/skill/SpeakingPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/skill/WritingPage.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/IeltsWeb.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/ref/IeltsWeb.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/ref/IeltsWeb.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/Debug/net9.0/refint/IeltsWeb.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/Debug/net9.0/refint/IeltsWeb.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/IeltsWeb.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/IeltsWeb.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../obj/project.nuget.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PDTnhah&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/PDTnhah/IeltsWeb.git&quot;,
+    &quot;accountId&quot;: &quot;d5f70664-6688-4da7-afb6-49a5f940329f&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="1ZqpRh2Q" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2xd7uU9gyPHq4AlEi7nZF25VbOG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/home/pham-duy-thanh/Documents/IeltsWeb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "org.rust.first.attach.projects": "true",
+    "ts.external.directory.path": "/snap/intellij-idea-ultimate/618/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26094.121" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-IU-251.26094.121" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5aacde6c-1213-42a0-b78d-aff3b3e8b2f6" name="Changes" comment="" />
+      <created>1748256318751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748256318751</updated>
+      <workItem from="1748256320475" duration="2520000" />
+      <workItem from="1748397037420" duration="3450000" />
+      <workItem from="1748403209055" duration="4033000" />
+      <workItem from="1748438824535" duration="9602000" />
+      <workItem from="1748489277474" duration="15782000" />
+      <workItem from="1748509724755" duration="1233000" />
+      <workItem from="1748583755645" duration="822000" />
+      <workItem from="1749545551023" duration="36000" />
+      <workItem from="1749571758000" duration="5417000" />
+      <workItem from="1749789469172" duration="17000" />
+      <workItem from="1749808740656" duration="75000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
